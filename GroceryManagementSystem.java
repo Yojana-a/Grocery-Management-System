@@ -31,16 +31,16 @@ public class GroceryManagementSystem {
         int[] itemStocks = new int[10];
 
         //some data to start with
-        itemNames[0] = "Nutella";
-        itemPrices[0] = 2.39;
-        itemStocks[0] = 5;
+        itemNames[0] = "Milk";
+        itemPrices[0] = 3.49;
+        itemStocks[0] = 10;
 
-        itemNames[1] = "Turkey";
-        itemPrices[1] = 4.99;
-        itemStocks[1] = 10;
+        itemNames[1] = "Eggs";
+        itemPrices[1] = 2.99;
+        itemStocks[1] = 20;
 
-        itemNames[2] = "Apples";
-        itemPrices[2] = 2.79;
+        itemNames[2] = "Bread";
+        itemPrices[2] = 2.49;
         itemStocks[2] = 15;
 
         int choice = 0;
