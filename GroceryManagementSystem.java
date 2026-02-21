@@ -1,5 +1,5 @@
-
-    /**
+import java.util.Scanner; 
+ /**
      * The GroceryManagementSystem class provides utility methods
      * for managing grocery inventory operations such as restocking items.
      *
@@ -10,7 +10,74 @@
      * Index positions in both arrays represent the same grocery item.
      */
 
+
 public class GroceryManagementSystem {
+
+    
+    /**
+    * This is the main method that runs the Grocery Management System menu.
+    * It makes the parallel arrays for item names, prices,
+    * and stock amounts, then displays a menu
+    * letting the user: view the inventory, restock an item,
+    * and exit the program.
+    * The menu runs until the user exits out of it.
+    */
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+
+        //the parallel arrays
+        String[] itemNames = new String[10];
+        double[] itemPrices = new double[10];
+        int[] itemStocks = new int[10];
+
+        //some data to start with
+        itemNames[0] = "Milk";
+        itemPrices[0] = 3.49;
+        itemStocks[0] = 10;
+
+        itemNames[1] = "Eggs";
+        itemPrices[1] = 2.99;
+        itemStocks[1] = 20;
+
+        itemNames[2] = "Bread";
+        itemPrices[2] = 2.49;
+        itemStocks[2] = 15;
+
+        int choice = 0;
+
+        while(choice != 3){
+            System.out.println("\n---- Grocery Menu ----");
+            System.out.println("1) View Inventory");
+            System.out.println("2) Restock Item");
+            System.out.println("3) Exit");
+            System.out.print("Choose an option: ");
+
+            choice = input.nextInt();
+
+            switch(choice){
+                case 1:
+                    printInventory(itemNames,itemPrices,itemStocks);
+                    break;
+                case 2:
+                    System.out.print("Enter item name: ");
+                    String target = input.next();
+
+                    System.out.print("Enter amount to add: ");
+                    int amount=input.nextInt();
+
+                    restockItem(itemNames,itemStocks,target,amount);
+                    break;
+
+                case 3:
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+        input.close();
+    }
      /**
      * Prints all non-null grocery items in the inventory.
      *
