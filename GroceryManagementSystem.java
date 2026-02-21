@@ -21,6 +21,7 @@ public class GroceryManagementSystem {
     * letting the user: view the inventory, restock an item,
     * and exit the program.
     * The menu runs until the user exits out of it.
+    * The version assumes item names are single words and menu input must be numeric
     */
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
@@ -60,7 +61,8 @@ public class GroceryManagementSystem {
                     break;
                 case 2:
                     System.out.print("Enter item name: ");
-                    String target = input.next();
+                    input.nextLine(); 
+                    String target = input.nextLine(); 
 
                     System.out.print("Enter amount to add: ");
                     int amount=input.nextInt();
